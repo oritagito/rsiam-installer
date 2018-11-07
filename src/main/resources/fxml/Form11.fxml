@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.PointLight?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141"
+            fx:controller="ru.redsys.rsiam.installer.Form.Impl.Form11Controller">
+    <children>
+        <PointLight color="CHARTREUSE" layoutX="10.0" layoutY="10.0" lightOn="true"/>
+        <BorderPane prefHeight="500.0" prefWidth="700.0">
+            <bottom>
+                <ButtonBar prefHeight="40.0" prefWidth="277.0" BorderPane.alignment="CENTER">
+                    <buttons>
+                        <Button fx:id="button3" cancelButton="true" onAction="#handleOnCloseButtonAction"
+                                prefHeight="25.0" prefWidth="80.0" text="Отмена"/>
+                        <Button fx:id="button2" onAction="#handleOnBackButtonAction" prefHeight="25.0" prefWidth="80.0"
+                                text="&lt; Назад"/>
+                        <Button fx:id="button1" defaultButton="true" disable="true" onAction="#handleOnNextButtonAction"
+                                prefHeight="25.0" prefWidth="80.0" text="Далее &gt;"/>
+                    </buttons>
+                </ButtonBar>
+            </bottom>
+            <top>
+                <MenuBar prefHeight="0.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Справка">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#handleOnHelpButtonAction"
+                                          text="О программе"/>
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            </top>
+            <center>
+                <SplitPane dividerPositions="0.2" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0"
+                           BorderPane.alignment="CENTER">
+                    <items>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                            <children>
+                                <Text layoutX="14.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                                      text="Монтирование ISO образа к созданным виртуальным машинам "
+                                      wrappingWidth="590.0">
+                                    <font>
+                                        <Font size="19.0"/>
+                                    </font>
+                                </Text>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                            <children>
+                                <Text layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                                      text="Выберите путь в хранилище VI Server, в который будет размещен созданный ISO"
+                                      wrappingWidth="631.0"/>
+                                <GridPane layoutX="14.0" layoutY="57.0" prefHeight="261.0" prefWidth="670.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="140.0"
+                                                           minWidth="10.0" prefWidth="83.0"/>
+                                        <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES"
+                                                           maxWidth="314.0" minWidth="10.0" prefWidth="200.0"/>
+                                        <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES"
+                                                           maxWidth="357.0" minWidth="0.0" prefWidth="30.0"/>
+                                        <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES"
+                                                           maxWidth="380.0" minWidth="10.0" prefWidth="350.0"/>
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                    </rowConstraints>
+                                    <children>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Datacenter:"
+                                              textAlignment="CENTER" wrappingWidth="72.0" GridPane.rowIndex="1"/>
+                                        <ComboBox fx:id="comboBox_1_1" onAction="#handleOnComboBox_1_1TextChanged"
+                                                  prefHeight="25.0" prefWidth="190.0" GridPane.columnIndex="1"
+                                                  GridPane.rowIndex="1"/>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Datastore:"
+                                              textAlignment="CENTER" wrappingWidth="67.0" GridPane.rowIndex="2"/>
+                                        <ComboBox fx:id="comboBox_1_2" disable="true"
+                                                  onAction="#handleOnComboBox_1_2TextChanged" prefHeight="25.0"
+                                                  prefWidth="191.0" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                        <ComboBox fx:id="comboBox_1_3" disable="true"
+                                                  onAction="#handleOnComboBox_1_3TextChanged" prefHeight="25.0"
+                                                  prefWidth="190.0" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Folder:"
+                                              textAlignment="CENTER" wrappingWidth="49.0" GridPane.rowIndex="3"/>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Путь:" textAlignment="CENTER"
+                                              wrappingWidth="34.0" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+                                        <TextField fx:id="textField_3_2" editable="false" prefHeight="25.0"
+                                                   prefWidth="256.0" text="vmstore:\" GridPane.columnIndex="3"
+                                                   GridPane.rowIndex="2"/>
+                                    </children>
+                                </GridPane>
+                            </children>
+                        </AnchorPane>
+                    </items>
+                </SplitPane>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>

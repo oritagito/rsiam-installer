@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.PointLight?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141"
+            fx:controller="ru.redsys.rsiam.installer.Form.Impl.Form7Controller">
+    <children>
+        <PointLight color="CHARTREUSE" layoutX="10.0" layoutY="10.0" lightOn="true"/>
+        <BorderPane prefHeight="500.0" prefWidth="700.0">
+            <bottom>
+                <ButtonBar prefHeight="40.0" prefWidth="277.0" BorderPane.alignment="CENTER">
+                    <buttons>
+                        <Button fx:id="button3" cancelButton="true" onAction="#handleOnCloseButtonAction"
+                                prefHeight="25.0" prefWidth="80.0" text="Отмена"/>
+                        <Button fx:id="button2" onAction="#handleOnBackButtonAction" prefHeight="25.0" prefWidth="80.0"
+                                text="&lt; Назад"/>
+                        <Button fx:id="button1" defaultButton="true" onAction="#handleOnNextButtonAction"
+                                prefHeight="25.0" prefWidth="80.0" text="Далее &gt;"/>
+                    </buttons>
+                </ButtonBar>
+            </bottom>
+            <top>
+                <MenuBar prefHeight="0.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Справка">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#handleOnHelpButtonAction"
+                                          text="О программе"/>
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            </top>
+            <center>
+                <SplitPane dividerPositions="0.2" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0"
+                           BorderPane.alignment="CENTER">
+                    <items>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                            <children>
+                                <Text layoutX="14.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                                      text="Заполнение конфигурационного файла" wrappingWidth="532.0">
+                                    <font>
+                                        <Font size="19.0"/>
+                                    </font>
+                                </Text>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                            <children>
+                                <Text layoutX="37.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                                      text="Параметры почтового сервера Lotus" textAlignment="CENTER" underline="true"
+                                      wrappingWidth="273.0">
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                </Text>
+                                <Text layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                                      text="Введите параметры необходимые для осуществления миграции и нажмите кнопку &quot;Далее&quot;:"
+                                      wrappingWidth="512.0"/>
+                                <GridPane fx:id="gridPane" layoutX="14.0" layoutY="100.0" prefHeight="227.0"
+                                          prefWidth="670.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="300.0"
+                                                           minWidth="10.0" prefWidth="300.0"/>
+                                        <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES"
+                                                           maxWidth="336.0" minWidth="10.0" prefWidth="234.0"/>
+                                        <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES"
+                                                           maxWidth="196.0" minWidth="10.0" prefWidth="100.0"/>
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="32.0"
+                                                        vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                    </rowConstraints>
+                                    <children>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                              text="Путь к ID-файлу заверителя и имя файла:" textAlignment="CENTER"
+                                              wrappingWidth="259.0" GridPane.rowIndex="3"/>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Почтовый домен:"
+                                              textAlignment="CENTER" wrappingWidth="131.0" GridPane.rowIndex="1"/>
+                                        <TextField fx:id="textField_1_0" maxHeight="-Infinity" maxWidth="-Infinity"
+                                                   minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0"
+                                                   prefWidth="210.0" GridPane.columnIndex="1"/>
+                                        <TextField fx:id="textField_1_1" maxHeight="-Infinity" maxWidth="-Infinity"
+                                                   minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0"
+                                                   prefWidth="210.0" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                              text="Значение домена в имени почтового адреса:" textAlignment="CENTER"
+                                              wrappingWidth="284.0" GridPane.rowIndex="2"/>
+                                        <TextField fx:id="textField_1_2" maxHeight="-Infinity" maxWidth="-Infinity"
+                                                   minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0"
+                                                   prefWidth="210.0" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                              text="Имя административного пользователя:" textAlignment="CENTER"
+                                              wrappingWidth="249.0"/>
+                                        <TextField fx:id="textField_1_3" maxHeight="-Infinity" maxWidth="-Infinity"
+                                                   minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0"
+                                                   prefWidth="210.0" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                              text="Путь к ID-файлам пользователей:" textAlignment="CENTER"
+                                              wrappingWidth="215.0" GridPane.rowIndex="4"/>
+                                        <TextField fx:id="textField_1_4" maxHeight="-Infinity" maxWidth="-Infinity"
+                                                   minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0"
+                                                   prefWidth="210.0" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Имя SMTP-сервера:"
+                                              textAlignment="CENTER" wrappingWidth="140.0" GridPane.rowIndex="5"/>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Порт SMTP-сервера:"
+                                              textAlignment="CENTER" wrappingWidth="142.0" GridPane.rowIndex="6"/>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail адрес:"
+                                              textAlignment="CENTER" wrappingWidth="103.0" GridPane.rowIndex="7"/>
+                                        <TextField fx:id="textField_1_5" maxHeight="-Infinity" maxWidth="-Infinity"
+                                                   minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0"
+                                                   prefWidth="210.0" promptText="example" GridPane.columnIndex="1"
+                                                   GridPane.rowIndex="5"/>
+                                        <TextField fx:id="textField_1_6" maxHeight="-Infinity" maxWidth="-Infinity"
+                                                   minHeight="-Infinity" minWidth="-Infinity"
+                                                   onKeyTyped="#handleOnDigitKeyTyped" prefHeight="25.0"
+                                                   prefWidth="210.0" promptText="25" GridPane.columnIndex="1"
+                                                   GridPane.rowIndex="6"/>
+                                        <TextField fx:id="textField_1_7" maxHeight="-Infinity" maxWidth="-Infinity"
+                                                   minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0"
+                                                   prefWidth="210.0" promptText="example@example.com"
+                                                   GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+                                    </children>
+                                </GridPane>
+                            </children>
+                        </AnchorPane>
+                    </items>
+                </SplitPane>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>

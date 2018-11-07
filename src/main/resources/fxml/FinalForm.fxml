@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.PointLight?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141"
+            fx:controller="ru.redsys.rsiam.installer.Form.Impl.FinalFormController">
+    <children>
+        <PointLight color="CHARTREUSE" layoutX="10.0" layoutY="10.0" lightOn="true"/>
+        <BorderPane prefHeight="500.0" prefWidth="700.0">
+            <bottom>
+                <ButtonBar prefHeight="40.0" prefWidth="277.0" BorderPane.alignment="CENTER">
+                    <buttons>
+                        <Button fx:id="button3" cancelButton="true" defaultButton="true"
+                                onAction="#handleOnCloseButtonAction" prefHeight="25.0" prefWidth="80.0" text="Выход"/>
+                    </buttons>
+                </ButtonBar>
+            </bottom>
+            <top>
+                <MenuBar prefHeight="0.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Справка">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#handleOnHelpButtonAction"
+                                          text="О программе"/>
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            </top>
+            <center>
+                <SplitPane dividerPositions="0.2" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0"
+                           BorderPane.alignment="CENTER">
+                    <items>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                            <children>
+                                <Text layoutX="14.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                                      text="Завершение" wrappingWidth="532.0">
+                                    <font>
+                                        <Font size="19.0"/>
+                                    </font>
+                                </Text>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                            <children>
+                                <Text fx:id="bodyLabel1" layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE"
+                                      strokeWidth="0.0" text="Процесс создание ISO образа завершен."
+                                      wrappingWidth="631.0"/>
+                                <Text fx:id="bodyLabel2" layoutX="14.0" layoutY="86.0" strokeType="OUTSIDE"
+                                      strokeWidth="0.0"
+                                      text="Подмонтируйте созданный образ к ранее созданным виртуальным машинам и запустите их для загрузки с ISO образа."
+                                      wrappingWidth="594.0"/>
+                                <Text layoutX="14.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                                      text="Для выхода из программы нажмите кнопку &quot;Выход&quot;"
+                                      wrappingWidth="594.0"/>
+                            </children>
+                        </AnchorPane>
+                    </items>
+                </SplitPane>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>

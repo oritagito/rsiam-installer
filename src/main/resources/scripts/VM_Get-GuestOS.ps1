@@ -1,0 +1,1 @@
+[System.Enum]::GetNames([VMware.Vim.VirtualMachineGuestOsIdentifier])

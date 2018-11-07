@@ -1,0 +1,2 @@
+$Children = (ls).Name
+$Children

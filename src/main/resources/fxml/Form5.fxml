@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.PointLight?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141"
+            fx:controller="ru.redsys.rsiam.installer.Form.Impl.Form5Controller">
+    <children>
+        <PointLight color="CHARTREUSE" layoutX="10.0" layoutY="10.0" lightOn="true"/>
+        <BorderPane prefHeight="500.0" prefWidth="700.0">
+            <bottom>
+                <ButtonBar prefHeight="40.0" prefWidth="277.0" BorderPane.alignment="CENTER">
+                    <buttons>
+                        <Button fx:id="button3" cancelButton="true" onAction="#handleOnCloseButtonAction"
+                                prefHeight="25.0" prefWidth="80.0" text="Отмена"/>
+                        <Button fx:id="button2" onAction="#handleOnBackButtonAction" prefHeight="25.0" prefWidth="80.0"
+                                text="&lt; Назад"/>
+                        <Button fx:id="button1" defaultButton="true" onAction="#handleOnNextButtonAction"
+                                prefHeight="25.0" prefWidth="80.0" text="Далее &gt;"/>
+                    </buttons>
+                </ButtonBar>
+            </bottom>
+            <top>
+                <MenuBar prefHeight="0.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Справка">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#handleOnHelpButtonAction"
+                                          text="О программе"/>
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            </top>
+            <center>
+                <SplitPane dividerPositions="0.2" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0"
+                           BorderPane.alignment="CENTER">
+                    <items>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                            <children>
+                                <Text layoutX="14.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                                      text="Заполнение конфигурационного файла" wrappingWidth="532.0">
+                                    <font>
+                                        <Font size="19.0"/>
+                                    </font>
+                                </Text>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                            <children>
+                                <Text layoutX="45.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                                      text="Параметры сервера приложний РК АСВ" textAlignment="CENTER" underline="true"
+                                      wrappingWidth="226.0">
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                </Text>
+                                <Text layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                                      text="Введите параметры необходимые для осуществления миграции и нажмите кнопку &quot;Далее&quot;:"
+                                      wrappingWidth="512.0"/>
+                                <GridPane fx:id="gridPane" layoutX="14.0" layoutY="100.0" prefHeight="77.0"
+                                          prefWidth="668.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="170.0"
+                                                           minWidth="10.0" prefWidth="135.0"/>
+                                        <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES"
+                                                           maxWidth="240.0" minWidth="10.0" prefWidth="237.0"/>
+                                        <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES"
+                                                           maxWidth="212.0" minWidth="10.0" prefWidth="134.0"/>
+                                        <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES"
+                                                           maxWidth="196.0" minWidth="10.0" prefWidth="194.0"/>
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                    </rowConstraints>
+                                    <children>
+                                        <CheckBox fx:id="checkBox" mnemonicParsing="false"
+                                                  onAction="#handleOnCheckBoxAction" GridPane.rowIndex="2"/>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Дополнительные параметры"
+                                              textAlignment="CENTER" wrappingWidth="175.0" GridPane.columnIndex="1"
+                                              GridPane.rowIndex="2"/>
+                                        <TextField fx:id="textField_1_0" maxHeight="-Infinity" maxWidth="-Infinity"
+                                                   minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0"
+                                                   prefWidth="138.0" promptText="example/0.0.0.0"
+                                                   GridPane.columnIndex="1"/>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Имя/IP-адрес:"
+                                              textAlignment="CENTER" wrappingWidth="116.0"/>
+                                    </children>
+                                </GridPane>
+                                <TabPane fx:id="tabPane" disable="true" layoutX="14.0" layoutY="181.0"
+                                         prefHeight="155.0" prefWidth="670.0" tabClosingPolicy="UNAVAILABLE">
+                                    <tabs>
+                                        <Tab text="Федерация">
+                                            <content>
+                                                <GridPane fx:id="gridPane2" maxHeight="-Infinity" maxWidth="-Infinity"
+                                                          minHeight="-Infinity" minWidth="-Infinity" prefHeight="126.0"
+                                                          prefWidth="566.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES"
+                                                                           maxWidth="162.0" minWidth="10.0"
+                                                                           prefWidth="110.0"/>
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="297.0"
+                                                                           minWidth="10.0" prefWidth="120.0"/>
+                                                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES"
+                                                                           maxWidth="219.0" minWidth="10.0"
+                                                                           prefWidth="110.0"/>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                           prefWidth="120.0"/>
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                              text="IP сервера приложений ПЭ:" textAlignment="CENTER"
+                                                              wrappingWidth="120.0"/>
+                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                              text="IP сервера приложений ОЭ:" textAlignment="CENTER"
+                                                              wrappingWidth="121.0" GridPane.columnIndex="2"/>
+                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                              text="Порт сервера приложений ПЭ:" textAlignment="CENTER"
+                                                              wrappingWidth="120.0" GridPane.rowIndex="1"/>
+                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                              text="Порт сервера приложений ОЭ:" textAlignment="CENTER"
+                                                              wrappingWidth="120.0" GridPane.columnIndex="2"
+                                                              GridPane.rowIndex="1"/>
+                                                        <TextField fx:id="textField1_1_0" maxHeight="-Infinity"
+                                                                   maxWidth="-Infinity" minHeight="-Infinity"
+                                                                   minWidth="-Infinity"
+                                                                   onKeyTyped="#handleOnIPAddresKeyTyped"
+                                                                   prefHeight="25.0" prefWidth="140.0"
+                                                                   promptText="0.0.0.0" GridPane.columnIndex="1"/>
+                                                        <TextField fx:id="textField1_3_0" maxHeight="-Infinity"
+                                                                   maxWidth="-Infinity" minHeight="-Infinity"
+                                                                   minWidth="-Infinity"
+                                                                   onKeyTyped="#handleOnIPAddresKeyTyped"
+                                                                   prefHeight="25.0" prefWidth="140.0"
+                                                                   promptText="0.0.0.0" GridPane.columnIndex="3"/>
+                                                        <TextField fx:id="textField1_1_1" maxHeight="-Infinity"
+                                                                   maxWidth="-Infinity" minHeight="-Infinity"
+                                                                   minWidth="-Infinity"
+                                                                   onKeyTyped="#handleOnDigitKeyTyped" prefHeight="25.0"
+                                                                   prefWidth="140.0" promptText="0"
+                                                                   GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                                        <TextField fx:id="textField1_3_1" maxHeight="-Infinity"
+                                                                   maxWidth="-Infinity" minHeight="-Infinity"
+                                                                   minWidth="-Infinity"
+                                                                   onKeyTyped="#handleOnDigitKeyTyped" prefHeight="25.0"
+                                                                   prefWidth="140.0" promptText="0"
+                                                                   GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+                                                    </children>
+                                                </GridPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="webgate - Целевые системы ">
+                                            <content>
+                                                <TextArea fx:id="textArea2" prefHeight="200.0" prefWidth="200.0"/>
+                                            </content>
+                                            <graphic>
+                                                <Label fx:id="label1" alignment="CENTER_RIGHT" contentDisplay="RIGHT"
+                                                       maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                                                       minWidth="-Infinity" onMouseEntered="#onMouseEntered"
+                                                       onMouseExited="#onMouseExited">
+                                                    <tooltip>
+                                                        <Tooltip fx:id="toolTip1" autoHide="true" contentDisplay="RIGHT"
+                                                                 text="Пример заполнения:&#10;&#10;webgate_target_systems:&#10;  asv:&#10;    transport: http&#10;    context: /asvWeb/&#10;    location: 10.0.14.143:9080&#10;    negative_lookahead: (?!utp)&#10;&#10;Пробелы важны!"/>
+                                                    </tooltip>
+                                                </Label>
+                                            </graphic>
+                                        </Tab>
+                                        <Tab text="webgate - Фильтры">
+                                            <content>
+                                                <TextArea fx:id="textArea3" prefHeight="200.0" prefWidth="200.0"/>
+                                            </content>
+                                            <graphic>
+                                                <Label fx:id="label2" alignment="CENTER_RIGHT" contentDisplay="RIGHT"
+                                                       maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                                                       minWidth="-Infinity" onMouseEntered="#onMouseEntered2"
+                                                       onMouseExited="#onMouseExited">
+                                                    <tooltip>
+                                                        <Tooltip fx:id="toolTip2" autoHide="true" contentDisplay="RIGHT"
+                                                                 text="Пример заполнения:&#10;&#10;webgate_filters:   &#10;    - &quot;.*\\.ico$&quot;&#10;    - &quot;/favicon.ico&quot;&#10;    - &quot;/asvWeb/images/(.*)&quot;&#10;    - &quot;/asvWeb/style/(.*)&quot;&#10;    - &quot;/asvWeb/js/(.*)&quot;&#10;&#10;Пробелы важны!"/>
+                                                    </tooltip>
+                                                </Label>
+                                            </graphic>
+                                        </Tab>
+                                    </tabs>
+                                </TabPane>
+                            </children>
+                        </AnchorPane>
+                    </items>
+                </SplitPane>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>

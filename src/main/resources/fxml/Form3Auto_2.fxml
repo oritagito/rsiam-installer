@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.PointLight?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141"
+            fx:controller="ru.redsys.rsiam.installer.Form.Impl.Form3AutoController_2">
+    <children>
+        <PointLight color="CHARTREUSE" layoutX="10.0" layoutY="10.0" lightOn="true"/>
+        <BorderPane prefHeight="500.0" prefWidth="700.0">
+            <bottom>
+                <ButtonBar prefHeight="40.0" prefWidth="277.0" BorderPane.alignment="CENTER">
+                    <buttons>
+                        <Button fx:id="button3" cancelButton="true" onAction="#handleOnCloseButtonAction"
+                                prefHeight="25.0" prefWidth="80.0" text="Отмена"/>
+                        <Button fx:id="button2" disable="true" onAction="#handleOnBackButtonAction" prefHeight="25.0"
+                                prefWidth="80.0" text="&lt; Назад"/>
+                        <Button fx:id="button1" defaultButton="true" disable="true" onAction="#handleOnNextButtonAction"
+                                prefHeight="25.0" prefWidth="80.0" text="Далее &gt;"/>
+                    </buttons>
+                </ButtonBar>
+            </bottom>
+            <top>
+                <MenuBar prefHeight="0.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Справка">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#handleOnHelpButtonAction"
+                                          text="О программе"/>
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            </top>
+            <center>
+                <SplitPane dividerPositions="0.2" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0"
+                           BorderPane.alignment="CENTER">
+                    <items>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                            <children>
+                                <Text layoutX="14.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                                      text="Создание виртуальных машин в автоматическом режиме" wrappingWidth="532.0">
+                                    <font>
+                                        <Font size="19.0"/>
+                                    </font>
+                                </Text>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                            <children>
+                                <Text layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                                      text="Заполните параметры необходимые для создания виртуальной машины и нажмите кнопку &quot;Создать&quot;"
+                                      wrappingWidth="576.0"/>
+                                <TabPane fx:id="tabPane" layoutY="50.0" prefHeight="300.0" prefWidth="700.0"
+                                         tabClosingPolicy="UNAVAILABLE">
+                                    <tabs>
+                                        <Tab fx:id="tab" text="Сервер базы данных">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                                            prefWidth="200.0">
+                                                    <children>
+                                                        <GridPane prefHeight="261.0" prefWidth="670.0">
+                                                            <columnConstraints>
+                                                                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES"
+                                                                                   maxWidth="140.0" minWidth="10.0"
+                                                                                   prefWidth="83.0"/>
+                                                                <ColumnConstraints fillWidth="false" halignment="CENTER"
+                                                                                   hgrow="SOMETIMES" maxWidth="314.0"
+                                                                                   minWidth="10.0" prefWidth="200.0"/>
+                                                                <ColumnConstraints fillWidth="false" halignment="RIGHT"
+                                                                                   hgrow="SOMETIMES" maxWidth="249.0"
+                                                                                   minWidth="10.0" prefWidth="202.0"/>
+                                                                <ColumnConstraints fillWidth="false" halignment="CENTER"
+                                                                                   hgrow="SOMETIMES" maxWidth="174.0"
+                                                                                   minWidth="10.0" prefWidth="167.0"/>
+                                                            </columnConstraints>
+                                                            <rowConstraints>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                            </rowConstraints>
+                                                            <children>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Datacenter:" textAlignment="CENTER"
+                                                                      wrappingWidth="72.0" GridPane.rowIndex="1"/>
+                                                                <ComboBox fx:id="comboBox_1_1"
+                                                                          onAction="#handleOnComboBox_1_1TextChanged"
+                                                                          prefHeight="25.0" prefWidth="190.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="1"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Datastore:" textAlignment="CENTER"
+                                                                      wrappingWidth="67.0" GridPane.rowIndex="4"/>
+                                                                <ComboBox fx:id="comboBox_1_2" disable="true"
+                                                                          onAction="#handleOnComboBox_1_2TextChanged"
+                                                                          prefHeight="25.0" prefWidth="191.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="2"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Cluster:" textAlignment="CENTER"
+                                                                      wrappingWidth="51.0" GridPane.rowIndex="2"/>
+                                                                <ComboBox fx:id="comboBox_1_3" disable="true"
+                                                                          onAction="#handleOnComboBox_1_3TextChanged"
+                                                                          prefHeight="25.0" prefWidth="190.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="3"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Resource Pool:" textAlignment="CENTER"
+                                                                      wrappingWidth="91.0" GridPane.rowIndex="3"/>
+                                                                <ComboBox fx:id="comboBox_1_4" disable="true"
+                                                                          prefHeight="25.0" prefWidth="190.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="4"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Folder:" textAlignment="CENTER"
+                                                                      wrappingWidth="49.0" GridPane.rowIndex="5"/>
+                                                                <ComboBox fx:id="comboBox_1_5" disable="true"
+                                                                          prefHeight="25.0" prefWidth="190.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="5"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Network 1:" textAlignment="CENTER"
+                                                                      wrappingWidth="66.0" GridPane.rowIndex="8"/>
+                                                                <ComboBox fx:id="comboBox_1_6" disable="true"
+                                                                          prefHeight="25.0" prefWidth="190.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="6"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Guest OS:" textAlignment="CENTER"
+                                                                      wrappingWidth="63.0" GridPane.rowIndex="6"/>
+                                                                <ComboBox fx:id="comboBox_1_7" disable="true"
+                                                                          prefHeight="25.0" prefWidth="190.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="7"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="VM Host:" textAlignment="CENTER"
+                                                                      wrappingWidth="62.0" GridPane.rowIndex="7"/>
+                                                                <ComboBox fx:id="comboBox_1_8" disable="true"
+                                                                          prefHeight="25.0" prefWidth="190.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="8"/>
+                                                                <TextField fx:id="textField_3_1" maxHeight="-Infinity"
+                                                                           maxWidth="-Infinity" minHeight="-Infinity"
+                                                                           minWidth="-Infinity" prefHeight="25.0"
+                                                                           prefWidth="140.0" GridPane.columnIndex="3"
+                                                                           GridPane.rowIndex="1"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Имя в VMware:" textAlignment="CENTER"
+                                                                      wrappingWidth="96.0" GridPane.columnIndex="2"
+                                                                      GridPane.rowIndex="1"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Количество ядер:" textAlignment="CENTER"
+                                                                      wrappingWidth="109.0" GridPane.columnIndex="2"
+                                                                      GridPane.rowIndex="2"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Размер жесткого диска (ГБ):"
+                                                                      textAlignment="CENTER" wrappingWidth="168.0"
+                                                                      GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Объем оперативной памяти (ГБ):"
+                                                                      textAlignment="CENTER" wrappingWidth="196.0"
+                                                                      GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+                                                                <TextField fx:id="textField_3_2" maxHeight="-Infinity"
+                                                                           maxWidth="-Infinity" minHeight="-Infinity"
+                                                                           minWidth="-Infinity"
+                                                                           onKeyTyped="#handleOnDigitKeyTyped"
+                                                                           prefHeight="25.0" prefWidth="140.0"
+                                                                           GridPane.columnIndex="3"
+                                                                           GridPane.rowIndex="2"/>
+                                                                <TextField fx:id="textField_3_3" maxHeight="-Infinity"
+                                                                           maxWidth="-Infinity" minHeight="-Infinity"
+                                                                           minWidth="-Infinity"
+                                                                           onKeyTyped="#handleOnDigitKeyTyped"
+                                                                           prefHeight="25.0" prefWidth="140.0"
+                                                                           GridPane.columnIndex="3"
+                                                                           GridPane.rowIndex="3"/>
+                                                                <TextField fx:id="textField_3_4" maxHeight="-Infinity"
+                                                                           maxWidth="-Infinity" minHeight="-Infinity"
+                                                                           minWidth="-Infinity"
+                                                                           onKeyTyped="#handleOnDigitKeyTyped"
+                                                                           prefHeight="25.0" prefWidth="140.0"
+                                                                           GridPane.columnIndex="3"
+                                                                           GridPane.rowIndex="4"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Network 2:" textAlignment="CENTER"
+                                                                      wrappingWidth="66.0" GridPane.rowIndex="9"/>
+                                                                <ComboBox fx:id="comboBox_1_9" disable="true"
+                                                                          prefHeight="25.0" prefWidth="190.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="9"/>
+                                                                <CheckBox fx:id="checkBox" mnemonicParsing="false"
+                                                                          onAction="#handleOnCheckBoxAction"
+                                                                          prefHeight="17.0" prefWidth="196.0"
+                                                                          GridPane.columnIndex="2"
+                                                                          GridPane.rowIndex="9"/>
+                                                                <Button fx:id="button4" mnemonicParsing="false"
+                                                                        onAction="#handleOnCreateButtonAction"
+                                                                        prefHeight="25.0" prefWidth="165.0"
+                                                                        text="Создать" GridPane.columnIndex="3"
+                                                                        GridPane.rowIndex="9"/>
+                                                                <TextField fx:id="textField_3_6" disable="true"
+                                                                           maxHeight="-Infinity" maxWidth="-Infinity"
+                                                                           minHeight="-Infinity" minWidth="-Infinity"
+                                                                           prefHeight="25.0" prefWidth="140.0"
+                                                                           GridPane.columnIndex="3"
+                                                                           GridPane.rowIndex="6"/>
+                                                                <TextField fx:id="textField_3_7" disable="true"
+                                                                           maxHeight="-Infinity" maxWidth="-Infinity"
+                                                                           minHeight="-Infinity" minWidth="-Infinity"
+                                                                           prefHeight="25.0" prefWidth="140.0"
+                                                                           GridPane.columnIndex="3"
+                                                                           GridPane.rowIndex="7"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Создать Resource Pool с именем:"
+                                                                      textAlignment="CENTER" wrappingWidth="196.0"
+                                                                      GridPane.columnIndex="2" GridPane.rowIndex="6"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Создать Folder с именем:"
+                                                                      textAlignment="CENTER" wrappingWidth="154.0"
+                                                                      GridPane.columnIndex="2" GridPane.rowIndex="7"/>
+                                                                <CheckBox fx:id="checkBox_2" mnemonicParsing="false"
+                                                                          onAction="#handleOnCheckBox_2Action"
+                                                                          prefHeight="17.0" prefWidth="140.0"
+                                                                          GridPane.columnIndex="3"
+                                                                          GridPane.rowIndex="5"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Создать Resource Pool и Folder:"
+                                                                      textAlignment="CENTER" wrappingWidth="185.0"
+                                                                      GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+                                                            </children>
+                                                        </GridPane>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab fx:id="tab2" disable="true" text="Сервер приложений 1">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                                            prefWidth="200.0">
+                                                    <children>
+                                                        <GridPane prefHeight="261.0" prefWidth="670.0">
+                                                            <columnConstraints>
+                                                                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES"
+                                                                                   maxWidth="140.0" minWidth="10.0"
+                                                                                   prefWidth="83.0"/>
+                                                                <ColumnConstraints fillWidth="false" halignment="CENTER"
+                                                                                   hgrow="SOMETIMES" maxWidth="314.0"
+                                                                                   minWidth="10.0" prefWidth="200.0"/>
+                                                                <ColumnConstraints fillWidth="false" halignment="RIGHT"
+                                                                                   hgrow="SOMETIMES" maxWidth="249.0"
+                                                                                   minWidth="10.0" prefWidth="202.0"/>
+                                                                <ColumnConstraints fillWidth="false" halignment="CENTER"
+                                                                                   hgrow="SOMETIMES" maxWidth="174.0"
+                                                                                   minWidth="10.0" prefWidth="167.0"/>
+                                                            </columnConstraints>
+                                                            <rowConstraints>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                            </rowConstraints>
+                                                            <children>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Datacenter:" textAlignment="CENTER"
+                                                                      wrappingWidth="72.0" GridPane.rowIndex="1"/>
+                                                                <ComboBox fx:id="comboBox2_1_1"
+                                                                          onAction="#handleOnComboBox2_1_1TextChanged"
+                                                                          prefHeight="25.0" prefWidth="190.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="1"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Datastore:" textAlignment="CENTER"
+                                                                      wrappingWidth="67.0" GridPane.rowIndex="4"/>
+                                                                <ComboBox fx:id="comboBox2_1_2" disable="true"
+                                                                          onAction="#handleOnComboBox2_1_2TextChanged"
+                                                                          prefHeight="25.0" prefWidth="191.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="2"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Cluster:" textAlignment="CENTER"
+                                                                      wrappingWidth="51.0" GridPane.rowIndex="2"/>
+                                                                <ComboBox fx:id="comboBox2_1_3" disable="true"
+                                                                          onAction="#handleOnComboBox2_1_3TextChanged"
+                                                                          prefHeight="25.0" prefWidth="190.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="3"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Resource Pool:" textAlignment="CENTER"
+                                                                      wrappingWidth="91.0" GridPane.rowIndex="3"/>
+                                                                <ComboBox fx:id="comboBox2_1_4" disable="true"
+                                                                          prefHeight="25.0" prefWidth="190.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="4"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Folder:" textAlignment="CENTER"
+                                                                      wrappingWidth="49.0" GridPane.rowIndex="5"/>
+                                                                <ComboBox fx:id="comboBox2_1_5" disable="true"
+                                                                          prefHeight="25.0" prefWidth="190.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="5"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Network 1:" textAlignment="CENTER"
+                                                                      wrappingWidth="66.0" GridPane.rowIndex="8"/>
+                                                                <ComboBox fx:id="comboBox2_1_6" disable="true"
+                                                                          prefHeight="25.0" prefWidth="190.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="6"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Guest OS:" textAlignment="CENTER"
+                                                                      wrappingWidth="63.0" GridPane.rowIndex="6"/>
+                                                                <ComboBox fx:id="comboBox2_1_7" disable="true"
+                                                                          prefHeight="25.0" prefWidth="190.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="7"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="VM Host:" textAlignment="CENTER"
+                                                                      wrappingWidth="62.0" GridPane.rowIndex="7"/>
+                                                                <ComboBox fx:id="comboBox2_1_8" disable="true"
+                                                                          prefHeight="25.0" prefWidth="190.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="8"/>
+                                                                <TextField fx:id="textField2_3_1" maxHeight="-Infinity"
+                                                                           maxWidth="-Infinity" minHeight="-Infinity"
+                                                                           minWidth="-Infinity" prefHeight="25.0"
+                                                                           prefWidth="140.0" GridPane.columnIndex="3"
+                                                                           GridPane.rowIndex="1"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Количество ядер:" textAlignment="CENTER"
+                                                                      wrappingWidth="109.0" GridPane.columnIndex="2"
+                                                                      GridPane.rowIndex="2"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Размер жесткого диска (ГБ):"
+                                                                      textAlignment="CENTER" wrappingWidth="168.0"
+                                                                      GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Объем оперативной памяти (ГБ):"
+                                                                      textAlignment="CENTER" wrappingWidth="196.0"
+                                                                      GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+                                                                <TextField fx:id="textField2_3_2" maxHeight="-Infinity"
+                                                                           maxWidth="-Infinity" minHeight="-Infinity"
+                                                                           minWidth="-Infinity"
+                                                                           onKeyTyped="#handleOnDigitKeyTyped"
+                                                                           prefHeight="25.0" prefWidth="140.0"
+                                                                           GridPane.columnIndex="3"
+                                                                           GridPane.rowIndex="2"/>
+                                                                <TextField fx:id="textField2_3_3" maxHeight="-Infinity"
+                                                                           maxWidth="-Infinity" minHeight="-Infinity"
+                                                                           minWidth="-Infinity"
+                                                                           onKeyTyped="#handleOnDigitKeyTyped"
+                                                                           prefHeight="25.0" prefWidth="140.0"
+                                                                           GridPane.columnIndex="3"
+                                                                           GridPane.rowIndex="3"/>
+                                                                <TextField fx:id="textField2_3_4" maxHeight="-Infinity"
+                                                                           maxWidth="-Infinity" minHeight="-Infinity"
+                                                                           minWidth="-Infinity"
+                                                                           onKeyTyped="#handleOnDigitKeyTyped"
+                                                                           prefHeight="25.0" prefWidth="140.0"
+                                                                           GridPane.columnIndex="3"
+                                                                           GridPane.rowIndex="4"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Network 2:" textAlignment="CENTER"
+                                                                      wrappingWidth="66.0" GridPane.rowIndex="9"/>
+                                                                <ComboBox fx:id="comboBox2_1_9" disable="true"
+                                                                          prefHeight="25.0" prefWidth="190.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="9"/>
+                                                                <CheckBox fx:id="checkBox2" mnemonicParsing="false"
+                                                                          onAction="#handleOnCheckBox2Action"
+                                                                          prefHeight="17.0" prefWidth="196.0"
+                                                                          GridPane.columnIndex="2"
+                                                                          GridPane.rowIndex="9"/>
+                                                                <Button fx:id="button_2_4" mnemonicParsing="false"
+                                                                        onAction="#handleOnCreateButton2Action"
+                                                                        prefHeight="25.0" prefWidth="165.0"
+                                                                        text="Создать" GridPane.columnIndex="3"
+                                                                        GridPane.rowIndex="9"/>
+                                                                <TextField fx:id="textField2_3_6" disable="true"
+                                                                           maxHeight="-Infinity" maxWidth="-Infinity"
+                                                                           minHeight="-Infinity" minWidth="-Infinity"
+                                                                           prefHeight="25.0" prefWidth="140.0"
+                                                                           GridPane.columnIndex="3"
+                                                                           GridPane.rowIndex="6"/>
+                                                                <TextField fx:id="textField2_3_7" disable="true"
+                                                                           maxHeight="-Infinity" maxWidth="-Infinity"
+                                                                           minHeight="-Infinity" minWidth="-Infinity"
+                                                                           prefHeight="25.0" prefWidth="140.0"
+                                                                           GridPane.columnIndex="3"
+                                                                           GridPane.rowIndex="7"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Создать Resource Pool с именем:"
+                                                                      textAlignment="CENTER" wrappingWidth="196.0"
+                                                                      GridPane.columnIndex="2" GridPane.rowIndex="6"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Создать Folder с именем:"
+                                                                      textAlignment="CENTER" wrappingWidth="154.0"
+                                                                      GridPane.columnIndex="2" GridPane.rowIndex="7"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Создать Resource Pool и Folder:"
+                                                                      textAlignment="CENTER" wrappingWidth="185.0"
+                                                                      GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+                                                                <CheckBox fx:id="checkBox2_2" mnemonicParsing="false"
+                                                                          onAction="#handleOnCheckBox2_2Action"
+                                                                          prefHeight="17.0" prefWidth="140.0"
+                                                                          GridPane.columnIndex="3"
+                                                                          GridPane.rowIndex="5"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Имя в VMware:" textAlignment="CENTER"
+                                                                      wrappingWidth="96.0" GridPane.columnIndex="2"
+                                                                      GridPane.rowIndex="1"/>
+                                                            </children>
+                                                        </GridPane>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab fx:id="tab3" disable="true" text="Сервер приложений 2">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                                            prefWidth="200.0">
+                                                    <children>
+                                                        <GridPane prefHeight="261.0" prefWidth="670.0">
+                                                            <columnConstraints>
+                                                                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES"
+                                                                                   maxWidth="140.0" minWidth="10.0"
+                                                                                   prefWidth="83.0"/>
+                                                                <ColumnConstraints fillWidth="false" halignment="CENTER"
+                                                                                   hgrow="SOMETIMES" maxWidth="314.0"
+                                                                                   minWidth="10.0" prefWidth="200.0"/>
+                                                                <ColumnConstraints fillWidth="false" halignment="RIGHT"
+                                                                                   hgrow="SOMETIMES" maxWidth="249.0"
+                                                                                   minWidth="10.0" prefWidth="202.0"/>
+                                                                <ColumnConstraints fillWidth="false" halignment="CENTER"
+                                                                                   hgrow="SOMETIMES" maxWidth="174.0"
+                                                                                   minWidth="10.0" prefWidth="167.0"/>
+                                                            </columnConstraints>
+                                                            <rowConstraints>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                            </rowConstraints>
+                                                            <children>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Datacenter:" textAlignment="CENTER"
+                                                                      wrappingWidth="72.0" GridPane.rowIndex="1"/>
+                                                                <ComboBox fx:id="comboBox3_1_1"
+                                                                          onAction="#handleOnComboBox3_1_1TextChanged"
+                                                                          prefHeight="25.0" prefWidth="190.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="1"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Datastore:" textAlignment="CENTER"
+                                                                      wrappingWidth="67.0" GridPane.rowIndex="4"/>
+                                                                <ComboBox fx:id="comboBox3_1_2" disable="true"
+                                                                          onAction="#handleOnComboBox3_1_2TextChanged"
+                                                                          prefHeight="25.0" prefWidth="191.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="2"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Cluster:" textAlignment="CENTER"
+                                                                      wrappingWidth="51.0" GridPane.rowIndex="2"/>
+                                                                <ComboBox fx:id="comboBox3_1_3" disable="true"
+                                                                          onAction="#handleOnComboBox3_1_3TextChanged"
+                                                                          prefHeight="25.0" prefWidth="190.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="3"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Resource Pool:" textAlignment="CENTER"
+                                                                      wrappingWidth="91.0" GridPane.rowIndex="3"/>
+                                                                <ComboBox fx:id="comboBox3_1_4" disable="true"
+                                                                          prefHeight="25.0" prefWidth="190.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="4"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Folder:" textAlignment="CENTER"
+                                                                      wrappingWidth="49.0" GridPane.rowIndex="5"/>
+                                                                <ComboBox fx:id="comboBox3_1_5" disable="true"
+                                                                          prefHeight="25.0" prefWidth="190.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="5"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Network 1:" textAlignment="CENTER"
+                                                                      wrappingWidth="66.0" GridPane.rowIndex="8"/>
+                                                                <ComboBox fx:id="comboBox3_1_6" disable="true"
+                                                                          prefHeight="25.0" prefWidth="190.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="6"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Guest OS:" textAlignment="CENTER"
+                                                                      wrappingWidth="63.0" GridPane.rowIndex="6"/>
+                                                                <ComboBox fx:id="comboBox3_1_7" disable="true"
+                                                                          prefHeight="25.0" prefWidth="190.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="7"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="VM Host:" textAlignment="CENTER"
+                                                                      wrappingWidth="62.0" GridPane.rowIndex="7"/>
+                                                                <ComboBox fx:id="comboBox3_1_8" disable="true"
+                                                                          prefHeight="25.0" prefWidth="190.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="8"/>
+                                                                <TextField fx:id="textField3_3_1" maxHeight="-Infinity"
+                                                                           maxWidth="-Infinity" minHeight="-Infinity"
+                                                                           minWidth="-Infinity" prefHeight="25.0"
+                                                                           prefWidth="140.0" GridPane.columnIndex="3"
+                                                                           GridPane.rowIndex="1"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Количество ядер:" textAlignment="CENTER"
+                                                                      wrappingWidth="109.0" GridPane.columnIndex="2"
+                                                                      GridPane.rowIndex="2"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Размер жесткого диска (ГБ):"
+                                                                      textAlignment="CENTER" wrappingWidth="168.0"
+                                                                      GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Объем оперативной памяти (ГБ):"
+                                                                      textAlignment="CENTER" wrappingWidth="196.0"
+                                                                      GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+                                                                <TextField fx:id="textField3_3_2" maxHeight="-Infinity"
+                                                                           maxWidth="-Infinity" minHeight="-Infinity"
+                                                                           minWidth="-Infinity"
+                                                                           onKeyTyped="#handleOnDigitKeyTyped"
+                                                                           prefHeight="25.0" prefWidth="140.0"
+                                                                           GridPane.columnIndex="3"
+                                                                           GridPane.rowIndex="2"/>
+                                                                <TextField fx:id="textField3_3_3" maxHeight="-Infinity"
+                                                                           maxWidth="-Infinity" minHeight="-Infinity"
+                                                                           minWidth="-Infinity"
+                                                                           onKeyTyped="#handleOnDigitKeyTyped"
+                                                                           prefHeight="25.0" prefWidth="140.0"
+                                                                           GridPane.columnIndex="3"
+                                                                           GridPane.rowIndex="3"/>
+                                                                <TextField fx:id="textField3_3_4" maxHeight="-Infinity"
+                                                                           maxWidth="-Infinity" minHeight="-Infinity"
+                                                                           minWidth="-Infinity"
+                                                                           onKeyTyped="#handleOnDigitKeyTyped"
+                                                                           prefHeight="25.0" prefWidth="140.0"
+                                                                           GridPane.columnIndex="3"
+                                                                           GridPane.rowIndex="4"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Network 2:" textAlignment="CENTER"
+                                                                      wrappingWidth="66.0" GridPane.rowIndex="9"/>
+                                                                <ComboBox fx:id="comboBox3_1_9" disable="true"
+                                                                          prefHeight="25.0" prefWidth="190.0"
+                                                                          GridPane.columnIndex="1"
+                                                                          GridPane.rowIndex="9"/>
+                                                                <CheckBox fx:id="checkBox3" mnemonicParsing="false"
+                                                                          onAction="#handleOnCheckBox3Action"
+                                                                          prefHeight="17.0" prefWidth="196.0"
+                                                                          GridPane.columnIndex="2"
+                                                                          GridPane.rowIndex="9"/>
+                                                                <Button fx:id="button4_3" mnemonicParsing="false"
+                                                                        onAction="#handleOnCreateButton3Action"
+                                                                        prefHeight="25.0" prefWidth="165.0"
+                                                                        text="Создать" GridPane.columnIndex="3"
+                                                                        GridPane.rowIndex="9"/>
+                                                                <TextField fx:id="textField3_3_6" disable="true"
+                                                                           maxHeight="-Infinity" maxWidth="-Infinity"
+                                                                           minHeight="-Infinity" minWidth="-Infinity"
+                                                                           prefHeight="25.0" prefWidth="140.0"
+                                                                           GridPane.columnIndex="3"
+                                                                           GridPane.rowIndex="6"/>
+                                                                <TextField fx:id="textField3_3_7" disable="true"
+                                                                           maxHeight="-Infinity" maxWidth="-Infinity"
+                                                                           minHeight="-Infinity" minWidth="-Infinity"
+                                                                           prefHeight="25.0" prefWidth="140.0"
+                                                                           GridPane.columnIndex="3"
+                                                                           GridPane.rowIndex="7"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Создать Resource Pool с именем:"
+                                                                      textAlignment="CENTER" wrappingWidth="196.0"
+                                                                      GridPane.columnIndex="2" GridPane.rowIndex="6"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Создать Folder с именем:"
+                                                                      textAlignment="CENTER" wrappingWidth="154.0"
+                                                                      GridPane.columnIndex="2" GridPane.rowIndex="7"/>
+                                                                <CheckBox fx:id="checkBox3_2" mnemonicParsing="false"
+                                                                          onAction="#handleOnCheckBox3_2Action"
+                                                                          prefHeight="17.0" prefWidth="140.0"
+                                                                          GridPane.columnIndex="3"
+                                                                          GridPane.rowIndex="5"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Создать Resource Pool и Folder:"
+                                                                      textAlignment="CENTER" wrappingWidth="185.0"
+                                                                      GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+                                                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                                                                      text="Имя в VMware:" textAlignment="CENTER"
+                                                                      wrappingWidth="96.0" GridPane.columnIndex="2"
+                                                                      GridPane.rowIndex="1"/>
+                                                            </children>
+                                                        </GridPane>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                </TabPane>
+                            </children>
+                        </AnchorPane>
+                    </items>
+                </SplitPane>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>

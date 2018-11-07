@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.PointLight?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141"
+            fx:controller="ru.redsys.rsiam.installer.Form.Impl.Form10Controller">
+    <children>
+        <PointLight color="CHARTREUSE" layoutX="10.0" layoutY="10.0" lightOn="true"/>
+        <BorderPane prefHeight="500.0" prefWidth="700.0">
+            <bottom>
+                <ButtonBar prefHeight="40.0" prefWidth="277.0" BorderPane.alignment="CENTER">
+                    <buttons>
+                        <Button fx:id="button3" cancelButton="true" onAction="#handleOnCloseButtonAction"
+                                prefHeight="25.0" prefWidth="80.0" text="Отмена"/>
+                        <Button fx:id="button2" onAction="#handleOnBackButtonAction" prefHeight="25.0" prefWidth="80.0"
+                                text="&lt; Назад"/>
+                        <Button fx:id="button1" defaultButton="true" disable="true" onAction="#handleOnNextButtonAction"
+                                prefHeight="25.0" prefWidth="80.0" text="Далее &gt;"/>
+                    </buttons>
+                </ButtonBar>
+            </bottom>
+            <top>
+                <MenuBar prefHeight="0.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Справка">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#handleOnHelpButtonAction"
+                                          text="О программе"/>
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            </top>
+            <center>
+                <SplitPane dividerPositions="0.2" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0"
+                           BorderPane.alignment="CENTER">
+                    <items>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                            <children>
+                                <Text layoutX="14.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                                      text="Создание ISO образа" wrappingWidth="532.0">
+                                    <font>
+                                        <Font size="19.0"/>
+                                    </font>
+                                </Text>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                            <children>
+                                <Text layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                                      text="Мастер создаст образ по следующему пути" wrappingWidth="631.0"/>
+                                <Text layoutX="14.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                                      text="Чтобы воспользоваться данной папкой, нажмите кнопку &quot;Далее&quot;. Чтобы сменить папку, введите нужный путь или выберите ее, нажав кнопку &quot;Обзор&quot;."
+                                      wrappingWidth="631.0"/>
+                                <Text layoutX="53.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                                      text="Папка:" wrappingWidth="79.0"/>
+                                <TextField fx:id="textField" layoutX="53.0" layoutY="159.0" prefHeight="25.0"
+                                           prefWidth="281.0" text="С:\"/>
+                                <Button fx:id="button4" layoutX="373.0" layoutY="159.0" mnemonicParsing="false"
+                                        onAction="#handleOnOverviewButtonAction" prefHeight="25.0" prefWidth="97.0"
+                                        text="Обзор..."/>
+                            </children>
+                        </AnchorPane>
+                    </items>
+                </SplitPane>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>
